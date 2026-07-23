@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周娜娜 — 高级项目经理 · AI项目交付与研发效能</title>
+    <meta name="description" content="周娜娜，10年+经验高级项目经理，深耕AI项目交付、研发效能与PMO治理。PMP · ACP · NPDP认证。英语商务流利。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafaf8;
+            --surface: #ffffff;
+            --card: #ffffff;
+            --border: #e4e4e7;
+            --text: #18181b;
+            --text-muted: #71717a;
+            --text-light: #a1a1aa;
+            --accent: #4f46e5;
+            --accent-light: #eef2ff;
+            --accent-hover: #4338ca;
+            --amber: #d97706;
+            --green: #16a34a;
+            --rose: #e11d48;
+            --cyan: #0891b2;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Nav ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250,250,248,0.88); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 900px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
+        }
+        .nav-logo { font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 8px; }
+        .nav-links a {
+            font-size: 0.875rem; color: var(--text-muted); padding: 6px 12px;
+            border-radius: 8px; transition: all 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); background: var(--accent-light); text-decoration: none; }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 140px 24px 80px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--accent-light); border: 1px solid #c7d2fe;
+            color: var(--accent); font-size: 0.8rem; font-weight: 600;
+            padding: 5px 14px; border-radius: 20px; margin-bottom: 28px;
+        }
+        .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900;
+            letter-spacing: -0.04em; line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero h1 .accent { color: var(--accent); }
+        .hero-sub {
+            font-size: 1.15rem; color: var(--text-muted); max-width: 580px;
+            margin-bottom: 36px; line-height: 1.8;
+        }
+        .hero-stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px; max-width: 600px; margin-bottom: 40px;
+        }
+        .stat {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 18px 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        .stat .val {
+            font-size: 1.8rem; font-weight: 800; letter-spacing: -0.04em;
+            color: var(--accent); line-height: 1;
+        }
+        .stat .lbl { font-size: 0.78rem; color: var(--text-muted); margin-top: 6px; }
+        .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 10px; font-size: 0.9rem;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+            border: none; font-family: inherit;
+        }
+        .btn-primary {
+            background: var(--accent); color: #fff;
+            box-shadow: 0 2px 8px rgba(79,70,229,0.3);
+        }
+        .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 4px 16px rgba(79,70,229,0.4); text-decoration: none; }
+        .btn-outline {
+            background: var(--surface); color: var(--text);
+            border: 1.5px solid var(--border);
+        }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+        /* ── Container ── */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 64px 0; border-top: 1px solid var(--border); }
+        .section-label {
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.12em; color: var(--accent); margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+        .section-desc { font-size: 1rem; color: var(--text-muted); max-width: 540px; margin-bottom: 40px; }
+
+        /* ── About ── */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .about-text p { font-size: 0.975rem; color: var(--text-muted); margin-bottom: 14px; }
+        .about-text p strong { color: var(--text); }
+        .about-highlights { display: flex; flex-direction: column; gap: 12px; }
+        .highlight-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 16px 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        .highlight-card .hc-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+        .highlight-card .hc-desc { font-size: 0.82rem; color: var(--text-muted); }
+
+        /* ── Timeline ── */
+        .timeline { position: relative; }
+        .timeline::before {
+            content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+            width: 2px; background: linear-gradient(to bottom, var(--accent), var(--border));
+        }
+        .timeline-item {
+            display: flex; gap: 24px; margin-bottom: 32px;
+            position: relative;
+        }
+        .timeline-dot {
+            width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0;
+            background: var(--accent); border: 3px solid var(--bg);
+            box-shadow: 0 0 0 2px var(--accent); margin-top: 4px;
+            position: relative; z-index: 1;
+        }
+        .timeline-dot.past { background: var(--text-light); box-shadow: 0 0 0 2px var(--text-light); }
+        .timeline-content { flex: 1; }
+        .timeline-period { font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; color: var(--accent); margin-bottom: 4px; }
+        .timeline-title { font-weight: 700; font-size: 1rem; margin-bottom: 2px; }
+        .timeline-company { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 10px; }
+        .timeline-bullets { list-style: none; }
+        .timeline-bullets li {
+            font-size: 0.875rem; color: var(--text-muted);
+            padding: 2px 0; padding-left: 14px; position: relative;
+        }
+        .timeline-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+
+        /* ── Projects ── */
+        .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .project-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.25s, transform 0.25s;
+        }
+        .project-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+        .project-emoji { font-size: 2rem; margin-bottom: 14px; }
+        .project-name { font-weight: 800; font-size: 1rem; margin-bottom: 6px; }
+        .project-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
+        .project-metrics { display: flex; flex-wrap: wrap; gap: 8px; }
+        .metric {
+            background: var(--accent-light); border-radius: 8px;
+            padding: 4px 12px; font-size: 0.8rem; font-weight: 600;
+            color: var(--accent); font-family: 'JetBrains Mono', monospace;
+        }
+        .metric.green { background: #dcfce7; color: var(--green); }
+        .metric.amber { background: #fef3c7; color: var(--amber); }
+
+        /* ── Capabilities ── */
+        .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .cap-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        .cap-icon { font-size: 1.4rem; margin-bottom: 10px; }
+        .cap-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; }
+        .cap-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+        .cap-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+        .cap-tag {
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 6px; padding: 2px 8px;
+            font-size: 0.72rem; color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ── Philosophy ── */
+        .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .philosophy-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+        .philosophy-card blockquote {
+            font-size: 1rem; line-height: 1.8; color: var(--text);
+            border-left: 3px solid var(--accent); padding-left: 18px; margin-bottom: 14px;
+        }
+        .philosophy-card cite { font-size: 0.82rem; color: var(--text-muted); font-style: normal; }
+
+        /* ── Contact ── */
+        .contact-section { background: var(--surface); border-radius: var(--radius); padding: 48px; border: 1px solid var(--border); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-info { display: flex; flex-direction: column; gap: 16px; }
+        .contact-item { display: flex; align-items: center; gap: 12px; }
+        .contact-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: var(--accent-light); display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; flex-shrink: 0;
+        }
+        .contact-item .ci-label { font-size: 0.78rem; color: var(--text-muted); }
+        .contact-item .ci-value { font-weight: 600; font-size: 0.9rem; }
+        .contact-form { display: flex; flex-direction: column; gap: 12px; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; }
+        .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
+        .form-group input, .form-group textarea {
+            border: 1.5px solid var(--border); border-radius: 10px;
+            padding: 10px 14px; font-size: 0.9rem; font-family: inherit;
+            background: var(--bg); color: var(--text); outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-submit {
+            background: var(--accent); color: #fff; border: none;
+            padding: 12px 28px; border-radius: 10px; font-size: 0.9rem;
+            font-weight: 600; cursor: pointer; font-family: inherit;
+            transition: background 0.2s; align-self: flex-start;
+        }
+        .form-submit:hover { background: var(--accent-hover); }
+
+        /* ── Footer ── */
+        footer {
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.85rem; color: var(--text-muted);
+        }
+        footer a { color: var(--accent); }
+
+        @media (max-width: 700px) {
+            .about-grid, .projects-grid, .cap-grid, .philosophy-grid, .contact-grid { grid-template-columns: 1fr; }
+            .cap-grid { grid-template-columns: 1fr 1fr; }
+            .hero { padding: 120px 16px 60px; }
+            section { padding: 48px 0; }
+        }
+        @media print { nav { display: none; } }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo">周娜娜</div>
+        <div class="nav-links">
+            <a href="#about">关于我</a>
+            <a href="#experience">经历</a>
+            <a href="#projects">项目</a>
+            <a href="#capabilities">能力</a>
+            <a href="#contact">联系</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="top">
+    <div class="hero-badge"><span class="dot"></span> Available for opportunities</div>
+    <h1>让复杂项目<br><span class="accent">准时交付</span>，<br>让团队效率<br><span class="accent">持续提升</span></h1>
+    <p class="hero-sub">
+        我是周娜娜，专注项目管理与研发效能提升的实践者。<br>
+        10年+经验，深耕 AI 产品出海、音频社交与数字化治理三大方向。<br>
+        擅长把跨团队、跨时区的复杂事项，转化为可规划、可追踪、可复盘的交付机制。
+    </p>
+    <div class="hero-stats">
+        <div class="stat"><div class="val">10+</div><div class="lbl">年项目管理经验</div></div>
+        <div class="stat"><div class="val">95%</div><div class="lbl">出海项目交付率</div></div>
+        <div class="stat"><div class="val">40%</div><div class="lbl">团队效率提升</div></div>
+        <div class="stat"><div class="val">3</div><div class="lbl">个行业深耕</div></div>
+    </div>
+    <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">📂 查看项目案例</a>
+        <a href="#contact" class="btn btn-outline">✉️ 联系我</a>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about">
+    <div class="container">
+        <div class="section-label">About</div>
+        <div class="section-title">我是谁</div>
+        <div class="section-desc">在互联网、AI 与游戏行业深耕10年+，兼具项目管理与产品思维，左手推动交付，右手驱动效能。</div>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <p>我曾在<strong>美图集团</strong>主导 AI 影像产品的美国&巴西出海专项，负责从立项到合规落地的全生命周期管理。在<strong>荔枝集团</strong>统筹音频社交产品的多项目并行交付，并主导数字化治理平台从0到1的建设。</p>
+                <p>我的工作方法论是：<strong>先建立共同语言，再建立共同节奏，最后建立共同成果</strong>——通过结构化的治理机制（OKR、Sprint、风险台账、复盘文化）让复杂协同变得透明、可控。</p>
+                <p>我正在<strong>中山大学</strong>攻读数字经济硕士学位，持续提升在数据科学、AI应用与数字营销方向的认知深度。</p>
+            </div>
+            <div class="about-highlights">
+                <div class="highlight-card">
+                    <div class="hc-title">🎯 AI 项目交付</div>
+                    <div class="hc-desc">主导 AI 影像产品出海交付，按期交付率 95%+，跨境合规零阻断</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="hc-title">📊 研发效能</div>
+                    <div class="hc-desc">自研 AI 诊断工具 + 度量看板，团队效率提升 40%，交付周期缩短 20%</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="hc-title">🌏 跨文化协作</div>
+                    <div class="hc-desc">英语商务流利，可主持英文会议与海外团队对接，跨境资源调度实战丰富</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="hc-title">🏆 专业认证</div>
+                    <div class="hc-desc">PMP · ACP · NPDP · 软考（信息系统项目管理师）四证持有</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Timeline -->
+<section id="experience">
+    <div class="container">
+        <div class="section-label">Career</div>
+        <div class="section-title">工作经历</div>
+        <div class="section-desc">从海外游戏到 AI 出海，从敏捷教练到 PMO 治理——每段经历都是能力的叠加。</div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-period">2025.07 – 2026.04</div>
+                    <div class="timeline-title">高级项目经理</div>
+                    <div class="timeline-company">美图集团 · AI项目集、出海专项与研发交付</div>
+                    <ul class="timeline-bullets">
+                        <li>主导 AI 影像产品面向美国及巴西的出海专项全生命周期管理，按期交付率 95%+</li>
+                        <li>前置识别 GDPR/LGPD 合规风险并推动落地，跨境合规零阻断</li>
+                        <li>构建研发效能度量体系，延期风险降 30%，团队效率升 35%</li>
+                        <li>自研 AI 诊断工具识别流程瓶颈，协同效率提升 20%</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-period">2023.04 – 2025.06</div>
+                    <div class="timeline-title">高级项目经理</div>
+                    <div class="timeline-company">荔枝集团 · 音频社交产品与数字化治理</div>
+                    <ul class="timeline-bullets">
+                        <li>统筹语音直播/语音房/播客社区多项目并行交付，版本准时率 92%+</li>
+                        <li>构建数字化治理平台端到端交付，团队效率提升 40%，周期缩短 20%</li>
+                        <li>AI 内容洞察平台：用户留存 +20%，内容点击率 +15%</li>
+                        <li>沉淀音频社交产品交付 SOP，引入 Scrum 持续优化</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot past"></div>
+                <div class="timeline-content">
+                    <div class="timeline-period">2021.08 – 2022.11</div>
+                    <div class="timeline-title">资深项目经理 / Scrum Master</div>
+                    <div class="timeline-company">IGG · 游戏产品敏捷交付</div>
+                    <ul class="timeline-bullets">
+                        <li>管理 100+ 人跨职能团队敏捷交付，主持 Sprint 全流程</li>
+                        <li>引入 OKR + KPI 混合绩效框架，显著提升团队生产力</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot past"></div>
+                <div class="timeline-content">
+                    <div class="timeline-period">2015.09 – 2021.04</div>
+                    <div class="timeline-title">高级产品经理</div>
+                    <div class="timeline-company">点触科技 · 海外游戏产品</div>
+                    <ul class="timeline-bullets">
+                        <li>6 年深耕海外游戏产品，主导从市场洞察到上市策略全流程</li>
+                        <li>协同多部门推进跨团队协作，积累丰富的出海产品经验</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <div class="container">
+        <div class="section-label">Projects</div>
+        <div class="section-title">代表项目</div>
+        <div class="section-desc">用数字说话——这些项目让我积累了在 AI、出海、数字化等方向的深度实战经验。</div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-emoji">🚀</div>
+                <div class="project-name">美图 AI 影像产品出海专项</div>
+                <div class="project-desc">主导 N 影像产品面向美国及巴西的出海专项全生命周期管理，涵盖立项评审、跨国资源调度、GDPR/LGPD 合规与跨时区协同。按时按质交付，跨境合规零阻断。</div>
+                <div class="project-metrics">
+                    <span class="metric">交付率 95%+</span>
+                    <span class="metric green">合规零阻断</span>
+                    <span class="metric amber">美国 & 巴西</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-emoji">💡</div>
+                <div class="project-name">MHC AI 创新产品黑客松</div>
+                <div class="project-desc">负责赛制设计、资源协调与评审组织，统筹公司级创新孵化机制，推进 30 个创新项目从验证到商业化评估的全周期治理。</div>
+                <div class="project-metrics">
+                    <span class="metric">30 个项目孵化</span>
+                    <span class="metric green">用户满意度 +25%</span>
+                    <span class="metric amber">注册增长 40%</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-emoji">📊</div>
+                <div class="project-name">荔枝数字化治理平台</div>
+                <div class="project-desc">统筹立项论证、预算编制、进度管控及跨部门资源协调，构建全流程数据监控与风险预警体系，兼任产品策划与需求分析。</div>
+                <div class="project-metrics">
+                    <span class="metric">周期 -20%</span>
+                    <span class="metric green">成本节约 15%</span>
+                    <span class="metric amber">100% 节点监测</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-emoji">🤖</div>
+                <div class="project-name">AI 辅助效能诊断系统</div>
+                <div class="project-desc">自研 AI 自动诊断工具，基于 Jira/飞书数据自动识别流程瓶颈并生成改进建议报告；推动工程效率平台与研发工具链从 0 到 1 落地。</div>
+                <div class="project-metrics">
+                    <span class="metric">效率 +35%</span>
+                    <span class="metric green">周期 -20%</span>
+                    <span class="metric amber">Claude Code</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-emoji">🎙️</div>
+                <div class="project-name">荔枝 AI 内容洞察平台</div>
+                <div class="project-desc">融合大数据与 AI 算法构建内容效果追踪分析模型，形成"数据洞察 → 策略调整 → 效果评估"闭环，为内容策略迭代提供数据支撑。</div>
+                <div class="project-metrics">
+                    <span class="metric">留存 +20%</span>
+                    <span class="metric green">点击率 +15%</span>
+                    <span class="metric amber">灰度推广</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-emoji">🌐</div>
+                <div class="project-name">音频社交产品多项目并行交付</div>
+                <div class="project-desc">统筹语音直播/语音房/播客社区多项目并行交付，以 Scrum 双周迭代 + 灰度验证覆盖全流程，建立实时语音流、并发、内容安全等质量门禁。</div>
+                <div class="project-metrics">
+                    <span class="metric">准时率 92%+</span>
+                    <span class="metric green">100% 节点覆盖</span>
+                    <span class="metric amber">100+ 人团队</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Capabilities -->
+<section id="capabilities">
+    <div class="container">
+        <div class="section-label">Capabilities</div>
+        <div class="section-title">核心能力</div>
+        <div class="section-desc">项目交付的硬技能 + 跨部门协同的软技能，构成了我解决复杂问题的完整能力图谱。</div>
+
+        <div class="cap-grid">
+            <div class="cap-card">
+                <div class="cap-icon">🎯</div>
+                <div class="cap-title">AI 项目交付</div>
+                <div class="cap-desc">从需求到上线的全生命周期管理，AI 产品出海专项实战经验，跨境合规与跨时区协同。</div>
+                <div class="cap-tags"><span class="cap-tag">Scrum</span><span class="cap-tag">SAFe</span><span class="cap-tag">DevOps</span></div>
+            </div>
+            <div class="cap-card">
+                <div class="cap-icon">📈</div>
+                <div class="cap-title">研发效能</div>
+                <div class="cap-desc">从0到1搭建效能度量体系，自研 AI 诊断工具，数据驱动的问题诊断与持续改进。</div>
+                <div class="cap-tags"><span class="cap-tag">Jira</span><span class="cap-tag">DORA</span><span class="cap-tag">AI诊断</span></div>
+            </div>
+            <div class="cap-card">
+                <div class="cap-icon">🌏</div>
+                <div class="cap-title">跨文化协作</div>
+                <div class="cap-desc">英语商务流利，可主持英文会议与海外团队对接，跨境资源调度与 GDPR/LGPD 合规实战。</div>
+                <div class="cap-tags"><span class="cap-tag">English</span><span class="cap-tag">GDPR</span><span class="cap-tag">跨时区</span></div>
+            </div>
+            <div class="cap-card">
+                <div class="cap-icon">🗺️</div>
+                <div class="cap-title">OKR & 战略解码</div>
+                <div class="cap-desc">将管理层模糊战略意图转化为结构化 OKR，推动战略目标从规划到执行的全链路闭环。</div>
+                <div class="cap-tags"><span class="cap-tag">OKR</span><span class="cap-tag">KPI</span><span class="cap-tag">战略复盘</span></div>
+            </div>
+            <div class="cap-card">
+                <div class="cap-icon">🤖</div>
+                <div class="cap-title">AI 辅助研发</div>
+                <div class="cap-desc">Claude Code、Codex、Agent 自动化实战经验，自研 AI 诊断工具推动流程改进。</div>
+                <div class="cap-tags"><span class="cap-tag">Claude Code</span><span class="cap-tag">Codex</span><span class="cap-tag">Agent</span></div>
+            </div>
+            <div class="cap-card">
+                <div class="cap-icon">🔄</div>
+                <div class="cap-title">敏捷转型</div>
+                <div class="cap-desc">在多家企业主导 Scrum/看板/DevOps 落地，推动持续交付文化，沉淀 SOP 交付规范。</div>
+                <div class="cap-tags"><span class="cap-tag">敏捷转型</span><span class="cap-tag">Sprint</span><span class="cap-tag">回顾</span></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 36px;">
+            <div class="section-label" style="margin-bottom: 16px;">Certifications</div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <div style="background:var(--accent-light);border:1px solid #c7d2fe;color:var(--accent);border-radius:8px;padding:8px 18px;font-weight:700;font-size:0.875rem;"> PMP 项目管理 </div>
+                <div style="background:var(--accent-light);border:1px solid #c7d2fe;color:var(--accent);border-radius:8px;padding:8px 18px;font-weight:700;font-size:0.875rem;"> ACP 敏捷认证 </div>
+                <div style="background:var(--accent-light);border:1px solid #c7d2fe;color:var(--accent);border-radius:8px;padding:8px 18px;font-weight:700;font-size:0.875rem;"> NPDP 产品开发 </div>
+                <div style="background:var(--accent-light);border:1px solid #c7d2fe;color:var(--accent);border-radius:8px;padding:8px 18px;font-weight:700;font-size:0.875rem;"> 软考 · 系统项目管理 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy -->
+<section id="philosophy">
+    <div class="container">
+        <div class="section-label">Philosophy</div>
+        <div class="section-title">工作方法论</div>
+        <div class="section-desc">方法论不是模板，是每一次交付中沉淀下来的有效原则。</div>
+
+        <div class="philosophy-grid">
+            <div class="philosophy-card">
+                <blockquote>"好的项目管理，不是让每个人都忙碌，而是让每个人都清楚自己在为什么而战。"</blockquote>
+                <cite>— 项目管理的本质是透明</cite>
+            </div>
+            <div class="philosophy-card">
+                <blockquote>"风险不是报告里的数字，是在它变成问题之前就去解决它。"</blockquote>
+                <cite>— 风险前置，比救火更有价值</cite>
+            </div>
+            <div class="philosophy-card">
+                <blockquote>"交付不是终点，复盘才是。每一个项目的结束，都是下一项目的起点。"</blockquote>
+                <cite>— 持续改进，是效能提升的核心引擎</cite>
+            </div>
+            <div class="philosophy-card">
+                <blockquote>"英语不只是语言能力，是打开全球协作大门的钥匙。"</blockquote>
+                <cite>— 跨境交付，需要跨越语言的文化理解</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <div class="container">
+        <div class="section-label">Contact</div>
+        <div class="section-title">联系我</div>
+        <div class="section-desc">无论是工作机会、项目合作，还是行业交流，随时欢迎联系。</div>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <div class="ci-label">邮箱</div>
+                            <div class="ci-value">zhounanaok@163.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <div class="ci-label">手机</div>
+                            <div class="ci-value">185-5977-3382</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <div class="ci-label">所在城市</div>
+                            <div class="ci-value">深圳</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <div>
+                            <div class="ci-label">在读学位</div>
+                            <div class="ci-value">中山大学 · 数字经济硕士</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <div class="section-label" style="margin-bottom:8px;">目标岗位方向</div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                            <span style="background:var(--accent-light);border:1px solid #c7d2fe;color:var(--accent);border-radius:8px;padding:5px 14px;font-size:0.82rem;font-weight:600;">高级项目经理</span>
+                            <span style="background:var(--accent-light);border:1px solid #c7d2fe;color:var(--accent);border-radius:8px;padding:5px 14px;font-size:0.82rem;font-weight:600;">AI项目经理</span>
+                            <span style="background:var(--accent-light);border:1px solid #c7d2fe;color:var(--accent);border-radius:8px;padding:5px 14px;font-size:0.82rem;font-weight:600;">PMO管理</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label>姓名 / Name</label>
+                            <input type="text" placeholder="您怎么称呼？" required>
+                        </div>
+                        <div class="form-group">
+                            <label>邮箱 / Email</label>
+                            <input type="email" placeholder="您的邮箱地址" required>
+                        </div>
+                        <div class="form-group">
+                            <label>留言 / Message</label>
+                            <textarea placeholder="想对我说些什么？" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">发送消息 ✉️</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 周娜娜 · 深圳 · <a href="mailto:zhounanaok@163.com">zhounanaok@163.com</a></p>
+    <p style="margin-top:8px;font-size:0.78rem;">Built with ❤️ by Resume Evolver Agent · 简历进化者</p>
+</footer>
+
+<script>
+    function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.form-submit');
+        btn.textContent = '已发送！感谢您的留言 ✓';
+        btn.style.background = '#16a34a';
+        setTimeout(() => {
+            btn.textContent = '发送消息 ✉️';
+            btn.style.background = '';
+            e.target.reset();
+        }, 3000);
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Intersection observer for fade-in
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(s => {
+        s.style.opacity = '0';
+        s.style.transform = 'translateY(20px)';
+        s.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(s);
+    });
+</script>
+
+</body>
+</html>
