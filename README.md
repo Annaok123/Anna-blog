@@ -7,6 +7,7 @@
 周娜娜的个人品牌官网，展示高级项目经理的专业能力、项目经历与工作方法论。
 
 ## 技术栈
+本项目使用QClaw工具生成
 
 - **前端：** 纯 HTML + CSS + JavaScript（零框架依赖）
 - **字体：** Google Fonts（Fraunces + Plus Jakarta Sans + JetBrains Mono）
