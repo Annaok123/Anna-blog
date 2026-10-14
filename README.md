@@ -1,4 +1,4 @@
-# 周娜娜 — 个人品牌官网
+# 周娜娜 — 对外个人品牌官网
 
 > 🌐 **在线访问：** https://annaok123.github.io/Anna-blog/
 
